@@ -10,7 +10,5 @@ namespace CTODatabaseImplement.Models
         public int Id { get; set; }
 
 
-        [ForeignKey("ClientId")]
-        public virtual List<Society> Societies { get; set; }
     }
 }
