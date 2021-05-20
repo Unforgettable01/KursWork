@@ -6,21 +6,18 @@ using System.Text;
 
 namespace CTODatabaseImplement.Models
 {
-    public class Client
+    public class Worker
     {
         public int Id { get; set; }
         [Required]
-        public string ClientFIO { get; set; }
+        public string WorkerFIO { get; set; }
         [Required]
         public string Login { get; set; }
         [Required]
         public string NumberPhone { get; set; }
         [Required]
         public string Password { get; set; }
-
-        [ForeignKey("ClientId")]
-        public virtual List<Payment> Payment { get; set; }
-        [ForeignKey("ClientId")]
-        public virtual List<Request> Request { get; set; }
+        [ForeignKey("WorkerId")]
+        public virtual List<Work> Work { get; set; }
     }
 }
