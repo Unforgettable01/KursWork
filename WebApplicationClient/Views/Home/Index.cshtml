@@ -1,0 +1,65 @@
+﻿@using CTOBusinessLogic.ViewModels
+
+@model List<RequestViewModel>
+
+@{
+    ViewData["Title"] = "Главная страница";
+}
+
+<div class="text-center">
+    @{
+        if (Model == null)
+        {
+            <h3 class="display-4">РУКИ-КРЮКИ</h3>
+            return;
+        }
+        <p>
+            <a asp-action="Create">Сделать заявку</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Имя клиента
+                    </th>
+                    <th>
+                        Статус
+                    </th>
+
+                    <th>
+                        Дата создания
+                    </th>
+                    <th>
+                        Статус окончания
+                    </th>
+                    <th>
+                        Сумма
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateCreate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateImplement)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sum)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
